@@ -1,0 +1,264 @@
+/*
+
+MIT License
+
+Copyright (c) 2022 Bioregional Education Association
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+*/
+
+/* configure gap and pad size */
+.op-flex {
+    --op-flex-gap-vertical: 10px;
+    --op-flex-gap-horizontal: 10px;
+}
+
+
+/* reset all flex items */
+.op-flex > * {
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+
+/* general flex properties for items */
+.op-flex > .flex-base {
+    flex-basis: 0;
+}
+
+.op-flex > .flex-grow {
+    flex-grow: 1;
+}
+
+.op-flex > .flex-shrink {
+    flex-shrink: 1;
+}
+
+.op-flex > .flex-grow-none {
+    flex-grow: 0;
+}
+
+.op-flex > .flex-shrink-none {
+    flex-shrink: 0;
+}
+
+
+/* alignment properties for items */
+.op-flex > .flex-align-self-start {
+    align-self: flex-start;
+}
+
+.op-flex > .flex-align-self-end {
+    align-self: flex-end;
+}
+
+.op-flex > .flex-align-self-center {
+    align-self: center;
+}
+
+.op-flex > .flex-align-self-stretch {
+    align-self: stretch;
+}
+
+.op-flex > .flex-align-self-normal {
+    align-self: normal;
+}
+
+
+/* stretch items to create equal width columns */
+.op-flex.flex-stretch > * {
+    width: 100%;
+    flex-basis: 0px;
+    flex-grow: 1;
+}
+
+.op-flex.flex-stretch {
+    width: 100%;
+}
+
+
+/* apply a gap, deliberately using the opposite side than 'flex-gap' */
+.op-flex.flex-pad > *,
+.op-flex.flex-pad-vertical > * {
+    margin-bottom: var(--op-flex-gap-vertical);
+}
+
+.op-flex.flex-pad > *,
+.op-flex.flex-pad-horizontal > * {
+    margin-right: var(--op-flex-gap-horizontal);
+}
+
+
+/* apply padding to only top/left of container, letting the margins handle bottom/right */
+.op-flex.flex-pad,
+.op-flex.flex-pad-vertical {
+    padding-top: var(--op-flex-gap-vertical);
+    padding-bottom: 0px;
+}
+
+.op-flex.flex-pad,
+.op-flex.flex-pad-horizontal {
+    padding-left: var(--op-flex-gap-horizontal);
+    padding-right: 0px;
+}
+
+
+/* remove pad from single items */
+.op-flex > .flex-pad-none,
+.op-flex > .flex-pad-vertical-none {
+    margin-bottom: 0px;
+}
+
+.op-flex > .flex-pad-none,
+.op-flex > .flex-pad-horizontal-none {
+    margin-right: 0px;
+}
+
+
+/* apply gap to all but the first child, using the general sibling combinator */
+.op-flex.flex-gap > * ~ *,
+.op-flex.flex-gap-vertical > * ~ * {
+    margin-top: var(--op-flex-gap-vertical);
+}
+
+.op-flex.flex-gap > * ~ *,
+.op-flex.flex-gap-horizontal > * ~ * {
+    margin-left: var(--op-flex-gap-horizontal);
+}
+
+
+/* remove gap from single items */
+.op-flex > .flex-gap-none,
+.op-flex > .flex-gap-vertical-none {
+    margin-top: 0px;
+}
+
+.op-flex > .flex-gap-none,
+.op-flex > .flex-gap-horizontal-none {
+    margin-left: 0px;
+}
+
+
+/* push items using auto margins. applied here to override gaps */
+.op-flex > .flex-top {
+    margin-bottom: auto;
+}
+
+.op-flex > .flex-left {
+    margin-right: auto;
+}
+
+.op-flex > .flex-bottom {
+    margin-top: auto;
+}
+
+.op-flex > .flex-right {
+    margin-left: auto;
+}
+
+
+/* invisible seperator elements, used in place of auto margins on items */
+.op-flex > .flex-space {
+    margin: auto;
+    padding: 0px;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+}
+
+
+/* default flex properties. applied here to reset items nested within other 'op-flex' containers */
+.op-flex {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: normal;
+    justify-content: normal;
+}
+
+
+/* special flex properties that control flow */
+.op-flex.flex-vertical {
+    flex-direction: column;
+}
+
+.op-flex.flex-wrap {
+    flex-wrap: wrap;
+}
+
+
+/* apply both justify and align in 'flex-center', for convenience */
+.op-flex.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* container level justification properties. the 'just' keyword is left out of most selectors for ease of use */
+.op-flex.flex-start {
+    justify-content: flex-start;
+}
+
+.op-flex.flex-end {
+    justify-content: flex-end;
+}
+
+.op-flex.flex-wide {
+    justify-content: space-between;
+}
+
+.op-flex.flex-even {
+    justify-content: space-evenly;
+}
+
+.op-flex.flex-around {
+    justify-content: space-around;
+}
+
+.op-flex.flex-just-center {
+    justify-content: center;
+}
+
+.op-flex.flex-just-normal {
+    justify-content: normal;
+}
+
+
+/* container level alignment properties */
+.op-flex.flex-align-start {
+    align-items: flex-start;
+}
+
+.op-flex.flex-align-end {
+    align-items: flex-end;
+}
+
+.op-flex.flex-align-stretch {
+    align-items: stretch;
+}
+
+.op-flex.flex-align-center {
+    align-items: center;
+}
+
+.op-flex.flex-align-normal {
+    align-items: normal;
+}

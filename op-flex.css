@@ -148,6 +148,18 @@ SOFTWARE.
 }
 
 
+/* apply negative margins to container only when also using 'flex-wrap' */
+.op-flex.flex-gap.flex-wrap {
+    margin-top: calc(-1 * var(--op-flex-gap-vertical));
+    margin-left: calc(-1 * var(--op-flex-gap-horizontal));
+}
+
+.op-flex.flex-gap.flex-wrap > * {
+    margin-top: var(--op-flex-gap-vertical);
+    margin-left: var(--op-flex-gap-horizontal);
+}
+
+
 /* remove gap from single items */
 .op-flex.flex-vertical > .flex-gap-none,
 .op-flex > .flex-gap-vertical-none {

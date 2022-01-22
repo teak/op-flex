@@ -77,6 +77,10 @@ SOFTWARE.
     align-self: stretch;
 }
 
+.op-flex > .flex-align-self-baseline {
+    align-self: baseline;
+}
+
 .op-flex > .flex-align-self-normal {
     align-self: normal;
 }
@@ -251,12 +255,16 @@ SOFTWARE.
     align-items: flex-end;
 }
 
+.op-flex.flex-align-center {
+    align-items: center;
+}
+
 .op-flex.flex-align-stretch {
     align-items: stretch;
 }
 
-.op-flex.flex-align-center {
-    align-items: center;
+.op-flex.flex-align-baseline {
+    align-items: baseline;
 }
 
 .op-flex.flex-align-normal {

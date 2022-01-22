@@ -38,28 +38,6 @@ SOFTWARE.
 }
 
 
-/* general flex properties for items */
-.op-flex > .flex-base {
-    flex-basis: 0;
-}
-
-.op-flex > .flex-grow {
-    flex-grow: 1;
-}
-
-.op-flex > .flex-shrink {
-    flex-shrink: 1;
-}
-
-.op-flex > .flex-grow-none {
-    flex-grow: 0;
-}
-
-.op-flex > .flex-shrink-none {
-    flex-shrink: 0;
-}
-
-
 /* alignment properties for items */
 .op-flex > .flex-align-self-start {
     align-self: flex-start;
@@ -95,6 +73,28 @@ SOFTWARE.
 
 .op-flex.flex-stretch {
     width: 100%;
+}
+
+
+/* general flex properties for items */
+.op-flex > .flex-base {
+    flex-basis: 0;
+}
+
+.op-flex > .flex-grow {
+    flex-grow: 1;
+}
+
+.op-flex > .flex-shrink {
+    flex-shrink: 1;
+}
+
+.op-flex > .flex-grow-none {
+    flex-grow: 0;
+}
+
+.op-flex > .flex-shrink-none {
+    flex-shrink: 0;
 }
 
 

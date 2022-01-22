@@ -137,43 +137,43 @@ SOFTWARE.
 
 
 /* apply gap to all but the first child, using the general sibling combinator */
-.op-flex.flex-gap > * ~ *,
+.op-flex.flex-gap.flex-vertical > * ~ *,
 .op-flex.flex-gap-vertical > * ~ * {
     margin-top: var(--op-flex-gap-vertical);
 }
 
-.op-flex.flex-gap > * ~ *,
+.op-flex.flex-gap:not(.flex-vertical) > * ~ *,
 .op-flex.flex-gap-horizontal > * ~ * {
     margin-left: var(--op-flex-gap-horizontal);
 }
 
 
 /* remove gap from single items */
-.op-flex > .flex-gap-none,
+.op-flex.flex-vertical > .flex-gap-none,
 .op-flex > .flex-gap-vertical-none {
     margin-top: 0px;
 }
 
-.op-flex > .flex-gap-none,
+.op-flex:not(.flex-vertical) > .flex-gap-none,
 .op-flex > .flex-gap-horizontal-none {
     margin-left: 0px;
 }
 
 
 /* push items using auto margins. applied here to override gaps */
-.op-flex > .flex-top {
+.op-flex.flex-vertical > .flex-top {
     margin-bottom: auto;
 }
 
-.op-flex > .flex-left {
+.op-flex:not(.flex-vertical) > .flex-left {
     margin-right: auto;
 }
 
-.op-flex > .flex-bottom {
+.op-flex.flex-vertical > .flex-bottom {
     margin-top: auto;
 }
 
-.op-flex > .flex-right {
+.op-flex:not(.flex-vertical) > .flex-right {
     margin-left: auto;
 }
 

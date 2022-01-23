@@ -172,6 +172,24 @@ SOFTWARE.
 }
 
 
+/* apply gap to single items */
+.op-flex > .flex-gap-top {
+    margin-top: var(--op-flex-gap-vertical);
+}
+
+.op-flex > .flex-gap-left {
+    margin-left: var(--op-flex-gap-horizontal);
+}
+
+.op-flex > .flex-gap-bottom {
+    margin-bottom: var(--op-flex-gap-vertical);
+}
+
+.op-flex > .flex-gap-right {
+    margin-right: var(--op-flex-gap-horizontal);
+}
+
+
 /* push items using auto margins. applied here to override gaps */
 .op-flex.flex-vertical > .flex-top {
     margin-bottom: auto;

@@ -75,6 +75,10 @@ SOFTWARE.
     width: 100%;
 }
 
+.op-flex .op-flex.flex-stretch {
+    width: auto;
+}
+
 
 /* general flex properties for items */
 .op-flex > .flex-base {

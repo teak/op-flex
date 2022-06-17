@@ -247,6 +247,10 @@ SOFTWARE.
     flex-wrap: wrap;
 }
 
+.op-flex.flex-wide {
+    width: 100%;
+}
+
 
 /* apply both justify and align in 'flex-center', for convenience */
 .op-flex.flex-center {
@@ -264,7 +268,7 @@ SOFTWARE.
     justify-content: flex-end;
 }
 
-.op-flex.flex-wide {
+.op-flex.flex-between {
     justify-content: space-between;
 }
 

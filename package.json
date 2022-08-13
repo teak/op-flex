@@ -1,6 +1,6 @@
 {
   "name": "op-flex",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Verbose flexbox library, created for Oak and Orca School",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "flexbox",
     "verbose"
   ],
-  "author": "Max Topham <teak@oakandorca.ca>",
+  "author": "Max Topham <max@oakandorca.ca>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/teak/op-flex/issues"

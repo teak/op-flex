@@ -24,10 +24,13 @@ SOFTWARE.
 
 */
 
+
 /* configure gap and pad size */
 .op-flex {
     --op-flex-gap-vertical: 10px;
     --op-flex-gap-horizontal: 10px;
+    --op-flex-split-colour: #ddd;
+    --op-flex-split-width: 1px;
 }
 
 
@@ -231,6 +234,26 @@ SOFTWARE.
 
 .op-flex:not(.flex-vertical) > .flex-right {
     margin-left: auto;
+}
+
+
+/* split borders between items */
+.op-flex.flex-split.flex-vertical > *:not(:first-child) {
+    border-top: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+}
+
+.op-flex.flex-split.flex-gap.flex-vertical > *:not(:first-child),
+.op-flex.flex-split.flex-pad.flex-vertical > *:not(:first-child) {
+    padding-top: var(--op-flex-gap-vertical);
+}
+
+.op-flex.flex-split:not(.flex-vertical) > *:not(:first-child) {
+    border-left: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+}
+
+.op-flex.flex-split.flex-gap:not(.flex-vertical) > *:not(:first-child),
+.op-flex.flex-split.flex-pad:not(.flex-vertical) > *:not(:first-child) {
+    padding-left: var(--op-flex-gap-horizontal);
 }
 
 

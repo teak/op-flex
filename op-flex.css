@@ -144,6 +144,24 @@ SOFTWARE.
 }
 
 
+/* apply pad to single items */
+.op-flex > .flex-pad-top {
+    padding-top: var(--op-flex-gap-vertical);
+}
+
+.op-flex > .flex-pad-left {
+    padding-left: var(--op-flex-gap-horizontal);
+}
+
+.op-flex > .flex-pad-bottom {
+    padding-bottom: var(--op-flex-gap-vertical);
+}
+
+.op-flex > .flex-pad-right {
+    padding-right: var(--op-flex-gap-horizontal);
+}
+
+
 /* apply gap to all but the first child, using the general sibling combinator */
 .op-flex.flex-gap.flex-vertical > * ~ *,
 .op-flex.flex-gap-vertical > * ~ * {

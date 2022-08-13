@@ -243,6 +243,14 @@ SOFTWARE.
     flex-direction: column;
 }
 
+.op-flex.flex-reverse {
+    flex-direction: row-reverse;
+}
+
+.op-flex.flex-vertical.flex-reverse {
+    flex-direction: column-reverse;
+}
+
 .op-flex.flex-wrap {
     flex-wrap: wrap;
 }

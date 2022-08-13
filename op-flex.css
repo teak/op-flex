@@ -162,14 +162,14 @@ SOFTWARE.
 }
 
 
-/* apply gap to all but the first child, using the general sibling combinator */
-.op-flex.flex-gap.flex-vertical > * ~ *,
-.op-flex.flex-gap-vertical > * ~ * {
+/* apply gap to all but the first child */
+.op-flex.flex-gap.flex-vertical > *:not(:first-child),
+.op-flex.flex-gap-vertical > *:not(:first-child) {
     margin-top: var(--op-flex-gap-vertical);
 }
 
-.op-flex.flex-gap:not(.flex-vertical) > * ~ *,
-.op-flex.flex-gap-horizontal > * ~ * {
+.op-flex.flex-gap:not(.flex-vertical) > *:not(:first-child),
+.op-flex.flex-gap-horizontal > *:not(:first-child) {
     margin-left: var(--op-flex-gap-horizontal);
 }
 

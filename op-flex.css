@@ -142,12 +142,12 @@ SOFTWARE.
 /* remove pad from single items */
 .op-flex > .flex-pad-none,
 .op-flex > .flex-pad-vertical-none {
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
 }
 
 .op-flex > .flex-pad-none,
 .op-flex > .flex-pad-horizontal-none {
-    margin-right: 0px;
+    margin-right: 0px !important;
 }
 
 
@@ -196,12 +196,12 @@ SOFTWARE.
 /* remove gap from single items */
 .op-flex.flex-vertical > .flex-gap-none,
 .op-flex > .flex-gap-vertical-none {
-    margin-top: 0px;
+    margin-top: 0px !important;
 }
 
 .op-flex:not(.flex-vertical) > .flex-gap-none,
 .op-flex > .flex-gap-horizontal-none {
-    margin-left: 0px;
+    margin-left: 0px !important;
 }
 
 

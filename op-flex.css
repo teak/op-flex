@@ -333,6 +333,10 @@ SOFTWARE.
     justify-content: center;
 }
 
+.op-flex.flex-just-stretch {
+    justify-content: stretch;
+}
+
 .op-flex.flex-just-normal {
     justify-content: normal;
 }

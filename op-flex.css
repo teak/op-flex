@@ -25,7 +25,7 @@ SOFTWARE.
 */
 
 
-/* configure gap and pad size */
+/* configure vars */
 .op-flex {
     --op-flex-gap-vertical: 10px;
     --op-flex-gap-horizontal: 10px;
@@ -141,13 +141,17 @@ SOFTWARE.
 
 /* remove pad from single items */
 .op-flex > .flex-pad-none,
-.op-flex > .flex-pad-vertical-none {
-    margin-bottom: 0px !important;
+.op-flex.flex-pad > .flex-pad-none,
+.op-flex > .flex-pad-vertical-none,
+.op-flex.flex-pad > .flex-pad-vertical-none {
+    margin-bottom: 0px;
 }
 
 .op-flex > .flex-pad-none,
-.op-flex > .flex-pad-horizontal-none {
-    margin-right: 0px !important;
+.op-flex.flex-pad > .flex-pad-none,
+.op-flex > .flex-pad-horizontal-none,
+.op-flex.flex-pad > .flex-pad-horizontal-none {
+    margin-right: 0px;
 }
 
 
@@ -165,6 +169,16 @@ SOFTWARE.
 }
 
 .op-flex > .flex-pad-right {
+    padding-right: var(--op-flex-gap-horizontal);
+}
+
+.op-flex > .flex-pad-self-vertical {
+    padding-top: var(--op-flex-gap-vertical);
+    padding-bottom: var(--op-flex-gap-vertical);
+}
+
+.op-flex > .flex-pad-self-horizontal {
+    padding-left: var(--op-flex-gap-horizontal);
     padding-right: var(--op-flex-gap-horizontal);
 }
 
@@ -195,13 +209,17 @@ SOFTWARE.
 
 /* remove gap from single items */
 .op-flex.flex-vertical > .flex-gap-none,
-.op-flex > .flex-gap-vertical-none {
-    margin-top: 0px !important;
+.op-flex.flex-gap.flex-vertical > .flex-gap-none,
+.op-flex > .flex-gap-vertical-none,
+.op-flex.flex-gap > .flex-gap-vertical-none {
+    margin-top: 0px;
 }
 
 .op-flex:not(.flex-vertical) > .flex-gap-none,
-.op-flex > .flex-gap-horizontal-none {
-    margin-left: 0px !important;
+.op-flex.flex-gap:not(.flex-vertical) > .flex-gap-none,
+.op-flex > .flex-gap-horizontal-none,
+.op-flex.flex-gap > .flex-gap-horizontal-none {
+    margin-left: 0px;
 }
 
 
@@ -224,19 +242,31 @@ SOFTWARE.
 
 
 /* push items using auto margins. applied here to override gaps */
-.op-flex.flex-vertical > .flex-top {
+.op-flex.flex-vertical > .flex-top,
+.op-flex.flex-pad.flex-vertical > .flex-top,
+.op-flex.flex-vertical:not(.flex-reverse) > .flex-self-start,
+.op-flex.flex-vertical.flex-reverse > .flex-self-end {
     margin-bottom: auto;
 }
 
-.op-flex:not(.flex-vertical) > .flex-left {
+.op-flex:not(.flex-vertical) > .flex-left,
+.op-flex.flex-pad:not(.flex-vertical) > .flex-left,
+.op-flex:not(.flex-vertical):not(.flex-reverse) > .flex-self-start,
+.op-flex:not(.flex-vertical).flex-reverse > .flex-self-end {
     margin-right: auto;
 }
 
-.op-flex.flex-vertical > .flex-bottom {
+.op-flex.flex-vertical > .flex-bottom,
+.op-flex.flex-gap.flex-vertical > .flex-bottom,
+.op-flex.flex-vertical:not(.flex-reverse) > .flex-self-end,
+.op-flex.flex-vertical.flex-reverse > .flex-self-start {
     margin-top: auto;
 }
 
-.op-flex:not(.flex-vertical) > .flex-right {
+.op-flex:not(.flex-vertical) > .flex-right,
+.op-flex.flex-gap:not(.flex-vertical) > .flex-right,
+.op-flex:not(.flex-vertical):not(.flex-reverse) > .flex-self-end,
+.op-flex:not(.flex-vertical).flex-reverse > .flex-self-start {
     margin-left: auto;
 }
 
@@ -261,7 +291,7 @@ SOFTWARE.
 }
 
 
-/* invisible seperator elements, used in place of auto margins on items */
+/* invisible separator elements, used in place of auto margins on items */
 .op-flex > .flex-space {
     margin: auto;
     padding: 0px;
@@ -271,7 +301,7 @@ SOFTWARE.
 }
 
 
-/* default flex properties. applied here to reset items nested within other 'op-flex' containers */
+/* default flex properties, for resetting items nested within other 'op-flex' containers */
 .op-flex {
     display: flex;
     flex-basis: auto;

@@ -2,7 +2,7 @@
 
 MIT License
 
-Copyright (c) 2022 Bioregional Education Association
+Copyright (c) 2024 Bioregional Education Association
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -34,7 +34,7 @@ SOFTWARE.
 }
 
 
-/* reset all flex items */
+/* reset flex items */
 .op-flex > * {
     flex-grow: 0;
     flex-shrink: 1;
@@ -69,17 +69,26 @@ SOFTWARE.
 
 /* stretch items to create equal width columns */
 .op-flex.flex-stretch > * {
-    width: 100%;
     flex-basis: 0px;
     flex-grow: 1;
 }
 
-.op-flex.flex-stretch {
+.op-flex.flex-stretch:not(.flex-vertical),
+.op-flex.flex-stretch:not(.flex-vertical) > * {
     width: 100%;
 }
 
-.op-flex .op-flex.flex-stretch {
+.op-flex .op-flex.flex-stretch:not(.flex-vertical) {
     width: auto;
+}
+
+.op-flex.flex-stretch.flex-vertical,
+.op-flex.flex-stretch.flex-vertical > * {
+    height: 100%;
+}
+
+.op-flex .op-flex.flex-stretch.flex-vertical {
+    height: auto;
 }
 
 
@@ -156,18 +165,22 @@ SOFTWARE.
 
 
 /* apply pad to single items */
+.op-flex.flex-pad-top,
 .op-flex > .flex-pad-top {
     padding-top: var(--op-flex-gap-vertical);
 }
 
+.op-flex.flex-pad-left,
 .op-flex > .flex-pad-left {
     padding-left: var(--op-flex-gap-horizontal);
 }
 
+.op-flex.flex-pad-bottom,
 .op-flex > .flex-pad-bottom {
     padding-bottom: var(--op-flex-gap-vertical);
 }
 
+.op-flex.flex-pad-right,
 .op-flex > .flex-pad-right {
     padding-right: var(--op-flex-gap-horizontal);
 }
@@ -310,6 +323,7 @@ SOFTWARE.
     align-items: normal;
     justify-content: normal;
     min-width: 0px;
+    min-height: 0px;
 }
 
 
@@ -330,8 +344,12 @@ SOFTWARE.
     flex-wrap: wrap;
 }
 
-.op-flex.flex-wide {
+.op-flex:not(.flex-vertical).flex-wide {
     width: 100%;
+}
+
+.op-flex.flex-vertical.flex-wide {
+    height: 100%;
 }
 
 

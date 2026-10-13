@@ -29,8 +29,8 @@ SOFTWARE.
 :root {
     --op-flex-gap-vertical: 10px;
     --op-flex-gap-horizontal: 10px;
-    --op-flex-pad-vertical: 10px;
-    --op-flex-pad-horizontal: 10px;
+    --op-flex-pad-vertical: var(--op-flex-gap-vertical);
+    --op-flex-pad-horizontal: var(--op-flex-gap-horizontal);
     --op-flex-split-colour: #ddd;
     --op-flex-split-width: 1px;
 }

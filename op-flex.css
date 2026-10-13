@@ -29,6 +29,8 @@ SOFTWARE.
 :root {
     --op-flex-gap-vertical: 10px;
     --op-flex-gap-horizontal: 10px;
+    --op-flex-pad-vertical: 10px;
+    --op-flex-pad-horizontal: 10px;
     --op-flex-split-colour: #ddd;
     --op-flex-split-width: 1px;
 }
@@ -122,77 +124,39 @@ SOFTWARE.
 }
 
 
-/* apply a gap, deliberately using the opposite side than 'flex-gap' */
-.op-flex.flex-pad > *,
-.op-flex.flex-pad-vertical > * {
-    margin-bottom: var(--op-flex-gap-vertical);
-}
-
-.op-flex.flex-pad > *,
-.op-flex.flex-pad-horizontal > * {
-    margin-right: var(--op-flex-gap-horizontal);
-}
-
-
-/* apply padding to only top/left of container, letting the margins handle bottom/right */
+/* apply padding to containers */
 .op-flex.flex-pad,
 .op-flex.flex-pad-vertical {
-    padding-top: var(--op-flex-gap-vertical);
-    padding-bottom: 0px;
+    padding-top: var(--op-flex-pad-vertical);
+    padding-bottom: var(--op-flex-pad-vertical);
 }
 
 .op-flex.flex-pad,
 .op-flex.flex-pad-horizontal {
-    padding-left: var(--op-flex-gap-horizontal);
-    padding-right: 0px;
+    padding-left: var(--op-flex-pad-horizontal);
+    padding-right: var(--op-flex-pad-horizontal);
 }
 
 
-/* remove pad from single items */
-.op-flex > .flex-pad-none,
-.op-flex.flex-pad > .flex-pad-none,
-.op-flex > .flex-pad-vertical-none,
-.op-flex.flex-pad > .flex-pad-vertical-none {
-    margin-bottom: 0px;
-}
-
-.op-flex > .flex-pad-none,
-.op-flex.flex-pad > .flex-pad-none,
-.op-flex > .flex-pad-horizontal-none,
-.op-flex.flex-pad > .flex-pad-horizontal-none {
-    margin-right: 0px;
-}
-
-
-/* apply pad to single items */
+/* apply padding to items */
 .op-flex.flex-pad-top,
 .op-flex > .flex-pad-top {
-    padding-top: var(--op-flex-gap-vertical);
+    padding-top: var(--op-flex-pad-vertical);
 }
 
 .op-flex.flex-pad-left,
 .op-flex > .flex-pad-left {
-    padding-left: var(--op-flex-gap-horizontal);
+    padding-left: var(--op-flex-pad-horizontal);
 }
 
 .op-flex.flex-pad-bottom,
 .op-flex > .flex-pad-bottom {
-    padding-bottom: var(--op-flex-gap-vertical);
+    padding-bottom: var(--op-flex-pad-vertical);
 }
 
 .op-flex.flex-pad-right,
 .op-flex > .flex-pad-right {
-    padding-right: var(--op-flex-gap-horizontal);
-}
-
-.op-flex > .flex-pad-self-vertical {
-    padding-top: var(--op-flex-gap-vertical);
-    padding-bottom: var(--op-flex-gap-vertical);
-}
-
-.op-flex > .flex-pad-self-horizontal {
-    padding-left: var(--op-flex-gap-horizontal);
-    padding-right: var(--op-flex-gap-horizontal);
+    padding-right: var(--op-flex-pad-horizontal);
 }
 
 

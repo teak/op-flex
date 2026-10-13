@@ -227,33 +227,29 @@ SOFTWARE.
 }
 
 
-/* push items using auto margins. applied here to override gaps */
+/* push items using auto margins */
 .op-flex.flex-vertical > .flex-top,
-.op-flex.flex-pad.flex-vertical > .flex-top,
 .op-flex.flex-vertical:not(.flex-reverse) > .flex-self-start,
 .op-flex.flex-vertical.flex-reverse > .flex-self-end {
-    margin-bottom: auto;
+    margin-bottom: auto !important;
 }
 
 .op-flex:not(.flex-vertical) > .flex-left,
-.op-flex.flex-pad:not(.flex-vertical) > .flex-left,
 .op-flex:not(.flex-vertical):not(.flex-reverse) > .flex-self-start,
 .op-flex:not(.flex-vertical).flex-reverse > .flex-self-end {
-    margin-right: auto;
+    margin-right: auto !important;
 }
 
 .op-flex.flex-vertical > .flex-bottom,
-.op-flex.flex-gap.flex-vertical > .flex-bottom,
 .op-flex.flex-vertical:not(.flex-reverse) > .flex-self-end,
 .op-flex.flex-vertical.flex-reverse > .flex-self-start {
-    margin-top: auto;
+    margin-top: auto !important;
 }
 
 .op-flex:not(.flex-vertical) > .flex-right,
-.op-flex.flex-gap:not(.flex-vertical) > .flex-right,
 .op-flex:not(.flex-vertical):not(.flex-reverse) > .flex-self-end,
 .op-flex:not(.flex-vertical).flex-reverse > .flex-self-start {
-    margin-left: auto;
+    margin-left: auto !important;
 }
 
 
@@ -307,7 +303,8 @@ SOFTWARE.
 
 /* invisible separator elements, used in place of auto margins on items */
 .op-flex > .flex-space {
-    margin: auto;
+    margin-top: auto !important;
+    margin-left: auto !important;
     padding: 0px;
     width: 0px;
     height: 0px;

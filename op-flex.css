@@ -297,7 +297,7 @@ SOFTWARE.
 }
 
 
-/* special flex properties that control flow */
+/* flow control properties */
 .op-flex.flex-vertical {
     flex-direction: column;
 }
@@ -330,25 +330,15 @@ SOFTWARE.
 }
 
 
-/* container level justification properties. the 'just' keyword is left out of most selectors for ease of use */
-.op-flex.flex-start {
+/* container level justify */
+.op-flex.flex-start,
+.op-flex.flex-just-start {
     justify-content: flex-start;
 }
 
-.op-flex.flex-end {
+.op-flex.flex-end,
+.op-flex.flex-just-end {
     justify-content: flex-end;
-}
-
-.op-flex.flex-between {
-    justify-content: space-between;
-}
-
-.op-flex.flex-even {
-    justify-content: space-evenly;
-}
-
-.op-flex.flex-around {
-    justify-content: space-around;
 }
 
 .op-flex.flex-just-center {
@@ -359,12 +349,24 @@ SOFTWARE.
     justify-content: stretch;
 }
 
+.op-flex.flex-just-between {
+    justify-content: space-between;
+}
+
+.op-flex.flex-just-even {
+    justify-content: space-evenly;
+}
+
+.op-flex.flex-just-around {
+    justify-content: space-around;
+}
+
 .op-flex.flex-just-normal {
     justify-content: normal;
 }
 
 
-/* container level alignment properties */
+/* container level alignment */
 .op-flex.flex-align-start {
     align-items: flex-start;
 }

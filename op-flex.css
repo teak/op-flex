@@ -27,26 +27,26 @@ SOFTWARE.
 
 /* configure vars */
 :root {
-    --op-flex-gap-vertical: 10px;
-    --op-flex-gap-horizontal: 10px;
-    --op-flex-pad-vertical: var(--op-flex-gap-vertical);
-    --op-flex-pad-horizontal: var(--op-flex-gap-horizontal);
-    --op-flex-split-colour: #ddd;
-    --op-flex-split-width: 1px;
+  --op-flex-gap-vertical: 10px;
+  --op-flex-gap-horizontal: 10px;
+  --op-flex-pad-vertical: var(--op-flex-gap-vertical);
+  --op-flex-pad-horizontal: var(--op-flex-gap-horizontal);
+  --op-flex-split-colour: #ddd;
+  --op-flex-split-width: 1px;
 }
 
 
 /* reset flex items */
 .op-flex > *,
 .flex-reset {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
 }
 
 .flex-reset {
-    min-width: 0px;
-    min-height: 0px;
+  min-width: 0px;
+  min-height: 0px;
 }
 
 
@@ -57,120 +57,120 @@ SOFTWARE.
 
 /* alignment properties for items */
 .op-flex > .flex-align-self-start {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .op-flex > .flex-align-self-end {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 
 .op-flex > .flex-align-self-center {
-    align-self: center;
+  align-self: center;
 }
 
 .op-flex > .flex-align-self-stretch {
-    align-self: stretch;
+  align-self: stretch;
 }
 
 .op-flex > .flex-align-self-baseline {
-    align-self: baseline;
+  align-self: baseline;
 }
 
 .op-flex > .flex-align-self-normal {
-    align-self: normal;
+  align-self: normal;
 }
 
 
 /* stretch items to create equal width columns */
 .op-flex.flex-stretch > * {
-    flex-grow: 1;
-    flex-basis: 0px;
-    min-width: 0px;
-    min-height: 0px;
+  flex-grow: 1;
+  flex-basis: 0px;
+  min-width: 0px;
+  min-height: 0px;
 }
 
 .op-flex.flex-stretch:not(.flex-vertical),
 .op-flex.flex-stretch:not(.flex-vertical) > * {
-    width: 100%;
+  width: 100%;
 }
 
 .op-flex .op-flex.flex-stretch:not(.flex-vertical) {
-    width: auto;
+  width: auto;
 }
 
 .op-flex.flex-stretch.flex-vertical,
 .op-flex.flex-stretch.flex-vertical > * {
-    height: 100%;
+  height: 100%;
 }
 
 .op-flex .op-flex.flex-stretch.flex-vertical {
-    height: auto;
+  height: auto;
 }
 
 
 /* general flex properties for items */
 .op-flex.flex-grow-all > * {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .op-flex > .flex-base {
-    flex-basis: 0px;
+  flex-basis: 0px;
 }
 
 .op-flex > .flex-base-auto {
-    flex-basis: auto;
+  flex-basis: auto;
 }
 
 .op-flex > .flex-grow {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .op-flex > .flex-shrink {
-    flex-shrink: 1;
+  flex-shrink: 1;
 }
 
 .op-flex > .flex-grow-none {
-    flex-grow: 0;
+  flex-grow: 0;
 }
 
 .op-flex > .flex-shrink-none {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 
 /* apply padding to containers */
 .op-flex.flex-pad,
 .op-flex.flex-pad-vertical {
-    padding-top: var(--op-flex-pad-vertical);
-    padding-bottom: var(--op-flex-pad-vertical);
+  padding-top: var(--op-flex-pad-vertical);
+  padding-bottom: var(--op-flex-pad-vertical);
 }
 
 .op-flex.flex-pad,
 .op-flex.flex-pad-horizontal {
-    padding-left: var(--op-flex-pad-horizontal);
-    padding-right: var(--op-flex-pad-horizontal);
+  padding-left: var(--op-flex-pad-horizontal);
+  padding-right: var(--op-flex-pad-horizontal);
 }
 
 
 /* apply padding to items */
 .op-flex.flex-pad-top,
 .op-flex > .flex-pad-top {
-    padding-top: var(--op-flex-pad-vertical);
+  padding-top: var(--op-flex-pad-vertical);
 }
 
 .op-flex.flex-pad-left,
 .op-flex > .flex-pad-left {
-    padding-left: var(--op-flex-pad-horizontal);
+  padding-left: var(--op-flex-pad-horizontal);
 }
 
 .op-flex.flex-pad-bottom,
 .op-flex > .flex-pad-bottom {
-    padding-bottom: var(--op-flex-pad-vertical);
+  padding-bottom: var(--op-flex-pad-vertical);
 }
 
 .op-flex.flex-pad-right,
 .op-flex > .flex-pad-right {
-    padding-right: var(--op-flex-pad-horizontal);
+  padding-right: var(--op-flex-pad-horizontal);
 }
 
 
@@ -179,46 +179,46 @@ SOFTWARE.
 .op-flex.flex-gap-vertical > :not(:first-child):not(.flex-pass):not(.flex-gap-none):not(.flex-gap-vertical-none):not(.flex-self-end):not(.flex-self-start),
 .op-flex.flex-gap.flex-vertical:not(.flex-wrap) > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-vertical-none):not(.flex-self-end):not(.flex-self-start),
 .op-flex.flex-gap-vertical > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-vertical-none):not(.flex-self-end):not(.flex-self-start) {
-    margin-top: var(--op-flex-gap-vertical);
+  margin-top: var(--op-flex-gap-vertical);
 }
 
 .op-flex.flex-gap:not(.flex-vertical):not(.flex-wrap) > :not(:first-child):not(.flex-pass):not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start),
 .op-flex.flex-gap-horizontal > :not(:first-child):not(.flex-pass):not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start),
 .op-flex.flex-gap:not(.flex-vertical):not(.flex-wrap) > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start),
 .op-flex.flex-gap-horizontal > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start) {
-    margin-left: var(--op-flex-gap-horizontal);
+  margin-left: var(--op-flex-gap-horizontal);
 }
 
 
 /* use column and row gap only when combined with flex-wrap, browser support is still lacking */
 .op-flex.flex-gap.flex-wrap:not(.flex-gap-horizontal-none) {
-    column-gap: var(--op-flex-gap-horizontal);
+  column-gap: var(--op-flex-gap-horizontal);
 }
 
 .op-flex.flex-gap.flex-wrap:not(.flex-gap-vertical-none) {
-    row-gap: var(--op-flex-gap-vertical);
+  row-gap: var(--op-flex-gap-vertical);
 }
 
 
 /* apply gap directly */
 .op-flex.flex-gap-top,
 .op-flex > .flex-gap-top {
-    margin-top: var(--op-flex-gap-vertical);
+  margin-top: var(--op-flex-gap-vertical);
 }
 
 .op-flex.flex-gap-left,
 .op-flex > .flex-gap-left {
-    margin-left: var(--op-flex-gap-horizontal);
+  margin-left: var(--op-flex-gap-horizontal);
 }
 
 .op-flex.flex-gap-bottom,
 .op-flex > .flex-gap-bottom {
-    margin-bottom: var(--op-flex-gap-vertical);
+  margin-bottom: var(--op-flex-gap-vertical);
 }
 
 .op-flex.flex-gap-right,
 .op-flex > .flex-gap-right {
-    margin-right: var(--op-flex-gap-horizontal);
+  margin-right: var(--op-flex-gap-horizontal);
 }
 
 
@@ -226,187 +226,187 @@ SOFTWARE.
 .op-flex.flex-vertical > .flex-top,
 .op-flex.flex-vertical:not(.flex-reverse) > .flex-self-start,
 .op-flex.flex-vertical.flex-reverse > .flex-self-end {
-    margin-bottom: auto !important;
+  margin-bottom: auto !important;
 }
 
 .op-flex:not(.flex-vertical) > .flex-left,
 .op-flex:not(.flex-vertical):not(.flex-reverse) > .flex-self-start,
 .op-flex:not(.flex-vertical).flex-reverse > .flex-self-end {
-    margin-right: auto !important;
+  margin-right: auto !important;
 }
 
 .op-flex.flex-vertical > .flex-bottom,
 .op-flex.flex-vertical:not(.flex-reverse) > .flex-self-end,
 .op-flex.flex-vertical.flex-reverse > .flex-self-start {
-    margin-top: auto !important;
+  margin-top: auto !important;
 }
 
 .op-flex:not(.flex-vertical) > .flex-right,
 .op-flex:not(.flex-vertical):not(.flex-reverse) > .flex-self-end,
 .op-flex:not(.flex-vertical).flex-reverse > .flex-self-start {
-    margin-left: auto !important;
+  margin-left: auto !important;
 }
 
 
 /* split borders between items */
 .op-flex.flex-split.flex-vertical > :not(:last-child) {
-    border-bottom: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+  border-bottom: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 
 .op-flex.flex-split.flex-gap.flex-vertical > :not(:last-child) {
-    padding-bottom: var(--op-flex-gap-vertical);
+  padding-bottom: var(--op-flex-gap-vertical);
 }
 
 .op-flex.flex-split:not(.flex-vertical) > :not(:last-child) {
-    border-right: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+  border-right: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 
 .op-flex.flex-split.flex-gap:not(.flex-vertical) > :not(:last-child) {
-    padding-right: var(--op-flex-gap-horizontal);
+  padding-right: var(--op-flex-gap-horizontal);
 }
 
 
 /* apply split borders directly to items */
 .op-flex > .flex-split-top {
-    border-top: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+  border-top: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 .op-flex.flex-gap.flex-vertical > .flex-split-top {
-    padding-top: var(--op-flex-gap-vertical);
+  padding-top: var(--op-flex-gap-vertical);
 }
 
 .op-flex > .flex-split-left {
-    border-left: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+  border-left: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 .op-flex.flex-gap:not(.flex-vertical) > .flex-split-left {
-    padding-left: var(--op-flex-gap-horizontal);
+  padding-left: var(--op-flex-gap-horizontal);
 }
 
 .op-flex > .flex-split-bottom {
-    border-bottom: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+  border-bottom: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 .op-flex.flex-gap.flex-vertical > .flex-split-bottom {
-    padding-bottom: var(--op-flex-gap-vertical);
+  padding-bottom: var(--op-flex-gap-vertical);
 }
 
 .op-flex > .flex-split-right {
-    border-right: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+  border-right: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 .op-flex.flex-gap:not(.flex-vertical) > .flex-split-right {
-    padding-right: var(--op-flex-gap-horizontal);
+  padding-right: var(--op-flex-gap-horizontal);
 }
 
 
 /* invisible separator elements, used in place of auto margins on items */
 .op-flex > .flex-space {
-    margin-top: auto !important;
-    margin-left: auto !important;
-    padding: 0px;
-    width: 0px;
-    height: 0px;
-    visibility: hidden;
+  margin-top: auto !important;
+  margin-left: auto !important;
+  padding: 0px;
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
 }
 
 
 /* default flex properties */
 .op-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: normal;
-    justify-content: normal;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: normal;
+  justify-content: normal;
 }
 
 
 /* flow control properties */
 .op-flex.flex-vertical {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .op-flex.flex-reverse {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .op-flex.flex-vertical.flex-reverse {
-    flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .op-flex.flex-wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .op-flex:not(.flex-vertical).flex-wide {
-    width: 100%;
+  width: 100%;
 }
 
 .op-flex.flex-vertical.flex-wide {
-    height: 100%;
+  height: 100%;
 }
 
 
 /* apply both justify and align in 'flex-center', for convenience */
 .op-flex.flex-center {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 
 /* container level justify */
 .op-flex.flex-start,
 .op-flex.flex-just-start {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .op-flex.flex-end,
 .op-flex.flex-just-end {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .op-flex.flex-just-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .op-flex.flex-just-stretch {
-    justify-content: stretch;
+  justify-content: stretch;
 }
 
 .op-flex.flex-just-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .op-flex.flex-just-even {
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 }
 
 .op-flex.flex-just-around {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .op-flex.flex-just-normal {
-    justify-content: normal;
+  justify-content: normal;
 }
 
 
 /* container level alignment */
 .op-flex.flex-align-start {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .op-flex.flex-align-end {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .op-flex.flex-align-center {
-    align-items: center;
+  align-items: center;
 }
 
 .op-flex.flex-align-stretch {
-    align-items: stretch;
+  align-items: stretch;
 }
 
 .op-flex.flex-align-baseline {
-    align-items: baseline;
+  align-items: baseline;
 }
 
 .op-flex.flex-align-normal {
-    align-items: normal;
+  align-items: normal;
 }

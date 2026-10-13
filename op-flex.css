@@ -71,8 +71,10 @@ SOFTWARE.
 
 /* stretch items to create equal width columns */
 .op-flex.flex-stretch > * {
-    flex-basis: 0px;
     flex-grow: 1;
+    flex-basis: 0px;
+    min-width: 0px;
+    min-height: 0px;
 }
 
 .op-flex.flex-stretch:not(.flex-vertical),

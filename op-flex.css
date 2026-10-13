@@ -258,21 +258,49 @@ SOFTWARE.
 
 
 /* split borders between items */
-.op-flex.flex-split.flex-vertical > *:not(:last-child) {
+.op-flex.flex-split.flex-vertical > :not(:last-child) {
     border-bottom: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 
-.op-flex.flex-split.flex-gap.flex-vertical > *:not(:last-child),
-.op-flex.flex-split.flex-pad.flex-vertical > *:not(:last-child) {
+.op-flex.flex-split.flex-gap.flex-vertical > :not(:last-child) {
     padding-bottom: var(--op-flex-gap-vertical);
 }
 
-.op-flex.flex-split:not(.flex-vertical) > *:not(:last-child) {
+.op-flex.flex-split:not(.flex-vertical) > :not(:last-child) {
     border-right: solid var(--op-flex-split-width) var(--op-flex-split-colour);
 }
 
-.op-flex.flex-split.flex-gap:not(.flex-vertical) > *:not(:last-child),
-.op-flex.flex-split.flex-pad:not(.flex-vertical) > *:not(:last-child) {
+.op-flex.flex-split.flex-gap:not(.flex-vertical) > :not(:last-child) {
+    padding-right: var(--op-flex-gap-horizontal);
+}
+
+
+/* apply split borders directly to items */
+.op-flex > .flex-split-top {
+    border-top: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+}
+.op-flex.flex-gap.flex-vertical > .flex-split-top {
+    padding-top: var(--op-flex-gap-vertical);
+}
+
+.op-flex > .flex-split-left {
+    border-left: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+}
+.op-flex.flex-gap:not(.flex-vertical) > .flex-split-left {
+    padding-left: var(--op-flex-gap-horizontal);
+}
+
+.op-flex > .flex-split-bottom {
+    border-bottom: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+}
+.op-flex.flex-gap.flex-vertical > .flex-split-bottom {
+    padding-bottom: var(--op-flex-gap-vertical);
+}
+
+.op-flex > .flex-split-right {
+    border-right: solid var(--op-flex-split-width) var(--op-flex-split-colour);
+}
+.op-flex.flex-gap:not(.flex-vertical) > .flex-split-right {
     padding-right: var(--op-flex-gap-horizontal);
 }
 

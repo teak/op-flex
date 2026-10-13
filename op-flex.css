@@ -37,9 +37,16 @@ SOFTWARE.
 
 
 /* reset flex items */
-.op-flex > * {
+.op-flex > *,
+.flex-reset {
     flex-grow: 0;
     flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.flex-reset {
+    min-width: 0px;
+    min-height: 0px;
 }
 
 

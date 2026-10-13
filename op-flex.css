@@ -50,6 +50,11 @@ SOFTWARE.
 }
 
 
+.flex-pass {
+  display: contents;
+}
+
+
 /* alignment properties for items */
 .op-flex > .flex-align-self-start {
     align-self: flex-start;
@@ -169,59 +174,49 @@ SOFTWARE.
 }
 
 
-/* apply gap to all but the first child */
-.op-flex.flex-gap.flex-vertical > *:not(:first-child),
-.op-flex.flex-gap-vertical > *:not(:first-child) {
+/* apply gap margin to all items, excluding the first child and other specific cases */
+.op-flex.flex-gap.flex-vertical:not(.flex-wrap) > :not(:first-child):not(.flex-pass):not(.flex-gap-none):not(.flex-gap-vertical-none):not(.flex-self-end):not(.flex-self-start),
+.op-flex.flex-gap-vertical > :not(:first-child):not(.flex-pass):not(.flex-gap-none):not(.flex-gap-vertical-none):not(.flex-self-end):not(.flex-self-start),
+.op-flex.flex-gap.flex-vertical:not(.flex-wrap) > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-vertical-none):not(.flex-self-end):not(.flex-self-start),
+.op-flex.flex-gap-vertical > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-vertical-none):not(.flex-self-end):not(.flex-self-start) {
     margin-top: var(--op-flex-gap-vertical);
 }
 
-.op-flex.flex-gap:not(.flex-vertical) > *:not(:first-child),
-.op-flex.flex-gap-horizontal > *:not(:first-child) {
+.op-flex.flex-gap:not(.flex-vertical):not(.flex-wrap) > :not(:first-child):not(.flex-pass):not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start),
+.op-flex.flex-gap-horizontal > :not(:first-child):not(.flex-pass):not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start),
+.op-flex.flex-gap:not(.flex-vertical):not(.flex-wrap) > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start),
+.op-flex.flex-gap-horizontal > .flex-pass:not(:first-child) > :not(.flex-gap-none):not(.flex-gap-horizontal-none):not(.flex-self-end):not(.flex-self-start) {
     margin-left: var(--op-flex-gap-horizontal);
 }
 
 
-/* apply negative margins to container only when also using 'flex-wrap' */
-.op-flex.flex-gap.flex-wrap {
-    margin-top: calc(-1 * var(--op-flex-gap-vertical));
-    margin-left: calc(-1 * var(--op-flex-gap-horizontal));
+/* use column and row gap only when combined with flex-wrap, browser support is still lacking */
+.op-flex.flex-gap.flex-wrap:not(.flex-gap-horizontal-none) {
+    column-gap: var(--op-flex-gap-horizontal);
 }
 
-.op-flex.flex-gap.flex-wrap > * {
-    margin-top: var(--op-flex-gap-vertical);
-    margin-left: var(--op-flex-gap-horizontal);
-}
-
-
-/* remove gap from single items */
-.op-flex.flex-vertical > .flex-gap-none,
-.op-flex.flex-gap.flex-vertical > .flex-gap-none,
-.op-flex > .flex-gap-vertical-none,
-.op-flex.flex-gap > .flex-gap-vertical-none {
-    margin-top: 0px;
-}
-
-.op-flex:not(.flex-vertical) > .flex-gap-none,
-.op-flex.flex-gap:not(.flex-vertical) > .flex-gap-none,
-.op-flex > .flex-gap-horizontal-none,
-.op-flex.flex-gap > .flex-gap-horizontal-none {
-    margin-left: 0px;
+.op-flex.flex-gap.flex-wrap:not(.flex-gap-vertical-none) {
+    row-gap: var(--op-flex-gap-vertical);
 }
 
 
-/* apply gap to single items */
+/* apply gap directly */
+.op-flex.flex-gap-top,
 .op-flex > .flex-gap-top {
     margin-top: var(--op-flex-gap-vertical);
 }
 
+.op-flex.flex-gap-left,
 .op-flex > .flex-gap-left {
     margin-left: var(--op-flex-gap-horizontal);
 }
 
+.op-flex.flex-gap-bottom,
 .op-flex > .flex-gap-bottom {
     margin-bottom: var(--op-flex-gap-vertical);
 }
 
+.op-flex.flex-gap-right,
 .op-flex > .flex-gap-right {
     margin-right: var(--op-flex-gap-horizontal);
 }
